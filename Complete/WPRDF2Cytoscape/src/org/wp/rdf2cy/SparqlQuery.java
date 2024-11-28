@@ -39,7 +39,7 @@ public class SparqlQuery {
 	public String getInteractionInfo(String pathwayId) {
 		return "PREFIX wp: <http://vocabularies.wikipathways.org/wp#>" +
 				"PREFIX dcterms: <http://purl.org/dc/terms/>" +
-				"SELECT DISTINCT ?interaction (GROUP_CONCAT(?participants ; separator=" ") AS ?par) (GROUP_CONCAT(?sources ; separator=" ") AS ?s) (GROUP_CONCAT(?targets ; separator=" ") AS ?t) (GROUP_CONCAT(?intType ; separator=" ") AS ?interactionTypes)" +
+				"SELECT DISTINCT ?interaction (GROUP_CONCAT(?participants ; separator=' ') AS ?par) (GROUP_CONCAT(?sources ; separator=' ') AS ?s) (GROUP_CONCAT(?targets ; separator=' ') AS ?t) (GROUP_CONCAT(?intType ; separator=' ') AS ?interactionTypes)" +
 				"WHERE {" +
 				"  ?pathway dc:identifier <http://identifiers.org/wikipathways/" + pathwayId + "> ." +
 				"  ?interaction dcterms:isPartOf ?pathway ." +
