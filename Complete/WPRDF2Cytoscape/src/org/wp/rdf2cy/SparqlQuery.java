@@ -61,7 +61,7 @@ public class SparqlQuery {
 				"SELECT DISTINCT ?datanode (GROUP_CONCAT(?type) AS ?dnType) (GROUP_CONCAT(?ensembl) AS ?ensid) (GROUP_CONCAT(?wd) AS ?wdid) (GROUP_CONCAT(?hmdb) AS ?hmdbid) (GROUP_CONCAT(?chebi) AS ?chebiid) " + 
 				"WHERE {" + 
 				"   ?pathway a wp:Pathway ." + 
-				"   ?pathway wp:organismName \"Homo sapiens\"^^xsd:string ." + 
+				"   ?pathway wp:organismName \"Homo sapiens\" ." + 
 				"   ?datanode dcterms:isPartOf ?pathway ." + 
 				"   ?datanode a wp:DataNode ." +
 				"   ?datanode a ?type ." +
