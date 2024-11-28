@@ -58,7 +58,7 @@ public class SparqlQuery {
 	public String getDatanodesQuery(String species) {
 		return  "PREFIX wp: <http://vocabularies.wikipathways.org/wp#> " + 
 				"PREFIX dcterms: <http://purl.org/dc/terms/> " + 
-				"SELECT DISTINCT ?datanode (GROUP_CONCAT(?type) AS ?dnType) (GROUP_CONCAT(?ensembl) AS ?ensid) (GROUP_CONCAT(?wd) AS ?wdid) (GROUP_CONCAT(?hmdb) AS ?hmdbid) (GROUP_CONCAT(?chebi) AS ?chebiid) " + 
+				"SELECT DISTINCT ?datanode (GROUP_CONCAT(?type ; separator=' ') AS ?dnType) (GROUP_CONCAT(?ensembl ; separator=' ') AS ?ensid) (GROUP_CONCAT(?wd ; separator=' ') AS ?wdid) (GROUP_CONCAT(?hmdb ; separator=' ') AS ?hmdbid) (GROUP_CONCAT(?chebi ; separator=' ') AS ?chebiid) " + 
 				"WHERE {" + 
 				"   ?pathway a wp:Pathway ." + 
 				"   ?pathway wp:organismName \"Homo sapiens\" ." + 
